@@ -1,7 +1,7 @@
 package com.ultimatefoodmanager.mediaservice.endpoints;
 
 import com.ultimatefoodmanager.mediaservice.model.exceptions.BadRequestException;
-import com.ultimatefoodmanager.mediaservice.model.exceptions.ImageModel;
+import com.ultimatefoodmanager.mediaservice.model.ImageModel;
 import com.ultimatefoodmanager.mediaservice.service.ImageService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -38,7 +38,7 @@ public class MediaController {
             @ApiResponse(code = 200, message = "Operation successful!"),
             @ApiResponse(code = 400, message = "Bad exception!", response = BadRequestException.class),
     })
-    @PostMapping("images/upload")
+    @PostMapping(value = "images/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ImageModel> saveImage(
             @RequestParam MultipartFile imageFile,
             @ApiIgnore @RequestHeader(required = false, name = HttpHeaders.AUTHORIZATION) String authorizationToken) throws IOException, BadRequestException {

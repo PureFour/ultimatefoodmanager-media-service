@@ -2,7 +2,7 @@ package com.ultimatefoodmanager.mediaservice.service;
 
 import com.ultimatefoodmanager.mediaservice.feign.DatabaseClient;
 import com.ultimatefoodmanager.mediaservice.model.exceptions.BadRequestException;
-import com.ultimatefoodmanager.mediaservice.model.exceptions.ImageModel;
+import com.ultimatefoodmanager.mediaservice.model.ImageModel;
 import com.ultimatefoodmanager.mediaservice.service.utils.FileUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

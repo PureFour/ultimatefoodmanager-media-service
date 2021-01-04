@@ -1,7 +1,7 @@
 package com.ultimatefoodmanager.mediaservice.feign;
 
 import com.ultimatefoodmanager.mediaservice.feign.decoder.DatabaseClientErrorDecoder;
-import com.ultimatefoodmanager.mediaservice.model.exceptions.ImageModel;
+import com.ultimatefoodmanager.mediaservice.model.ImageModel;
 import feign.Feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
