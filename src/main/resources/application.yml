@@ -5,6 +5,10 @@ spring:
   thymeleaf:
     check-template: false
     check-template-location: false
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
 
   boot:
     admin:
@@ -26,6 +30,13 @@ management:
     web:
       exposure:
         include: "*"
+
+database:
+  host: localhost
+  port: 8529
+  protocol: http
+  dbName: default-database
+  mountPath: database-service
 
 logging:
   level:
@@ -66,6 +77,13 @@ management:
 logging:
   file:
     name: logs/spring-boot-logger.log
+
+database:
+  host: database-service
+  port: 8529
+  protocol: http
+  dbName: default-database
+  mountPath: database-service
 
 ---
 spring:

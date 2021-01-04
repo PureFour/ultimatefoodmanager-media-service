@@ -1,4 +1,4 @@
-package com.purefour.mediaservice.security.config;
+package com.ultimatefoodmanager.mediaservice.security.config;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/**/swagger-resources/**",
             "/v3/api-docs",
             "/actuator/**",
-            "/**/media/helloWorld",
+            "/**/images/**",
     };
 
     @Override

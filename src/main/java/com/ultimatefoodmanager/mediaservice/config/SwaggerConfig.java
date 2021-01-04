@@ -1,4 +1,4 @@
-package com.purefour.mediaservice.config;
+package com.ultimatefoodmanager.mediaservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

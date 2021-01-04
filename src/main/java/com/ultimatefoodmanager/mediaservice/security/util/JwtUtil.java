@@ -1,4 +1,4 @@
-package com.purefour.mediaservice.security.util;
+package com.ultimatefoodmanager.mediaservice.security.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

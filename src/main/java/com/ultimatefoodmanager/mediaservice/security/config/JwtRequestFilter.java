@@ -1,6 +1,6 @@
-package com.purefour.mediaservice.security.config;
+package com.ultimatefoodmanager.mediaservice.security.config;
 
-import com.purefour.mediaservice.security.util.JwtUtil;
+import com.ultimatefoodmanager.mediaservice.security.util.JwtUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
