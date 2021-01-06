@@ -5,10 +5,13 @@ import com.ultimatefoodmanager.mediaservice.model.ImageModel;
 import feign.Feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.concurrent.CompletableFuture;
 
 @FeignClient(
         name = "database-service",
@@ -18,8 +21,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 )
 public interface DatabaseClient {
 
+    @Async("MediaServiceAsyncJobHandler")
     @PostMapping("images")
-    ImageModel saveImage(ImageModel imageModel);
+    CompletableFuture<ImageModel> saveImage(ImageModel imageModel);
 
     @GetMapping("images/{uuid}")
     ImageModel getImage(@PathVariable String uuid);
@@ -31,7 +35,7 @@ public interface DatabaseClient {
         private static final String SERVICE_UNAVAILABLE_MSG = "Database unavailable.";
 
         @Override
-        public ImageModel saveImage(ImageModel imageModel) {
+        public CompletableFuture<ImageModel> saveImage(ImageModel imageModel) {
             throw new IllegalStateException(SERVICE_UNAVAILABLE_MSG);
         }
 
