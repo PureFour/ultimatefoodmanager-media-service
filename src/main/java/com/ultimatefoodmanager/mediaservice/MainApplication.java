@@ -3,7 +3,9 @@ package com.ultimatefoodmanager.mediaservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.scheduling.annotation.EnableAsync;
 
+@EnableAsync
 @SpringBootApplication(scanBasePackages = "com.ultimatefoodmanager.mediaservice")
 @EnableFeignClients(basePackages = "com.ultimatefoodmanager.mediaservice.feign")
 public class MainApplication {
