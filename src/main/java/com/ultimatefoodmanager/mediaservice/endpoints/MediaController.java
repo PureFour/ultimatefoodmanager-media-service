@@ -50,11 +50,11 @@ public class MediaController {
             @ApiResponse(code = 200, message = "Operation successful!"),
             @ApiResponse(code = 400, message = "Bad exception!", response = BadRequestException.class),
     })
-    @GetMapping("images")
-    public ResponseEntity<ImageModel> getImage(
+    @GetMapping(value = "images", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<byte[]> getImage(
             @RequestParam String uuid,
             @ApiIgnore @RequestHeader(required = false, name = HttpHeaders.AUTHORIZATION) String authorizationToken) throws IOException {
-        return ResponseEntity.ok(imageService.getImage(uuid));
+        return ResponseEntity.ok(imageService.getImage(uuid).getBytes());
     }
 
     @ApiOperation(value = "Delete image")
