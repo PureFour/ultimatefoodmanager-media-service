@@ -14,8 +14,9 @@ public class ExecutorService {
     @Bean(name = "MediaServiceAsyncJobHandler")
     public Executor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(2);
-        executor.setMaxPoolSize(2);
+        // TODO ogarnąć to szybko!!!
+        executor.setCorePoolSize(1000);
+        executor.setMaxPoolSize(1000);
         executor.setQueueCapacity(500);
         executor.setThreadNamePrefix("MediaServiceAsyncJobHandler-");
         executor.initialize();
